@@ -15,3 +15,7 @@ class ActiveSupport::TestCase
 end
 
 Capybara.save_path = Rails.root.join("tmp/capybara")
+Capybara.register_driver :chrome do |app|
+  options = ::Selenium::WebDriver::Chrome::Options.new
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
+end

@@ -1,3 +1,6 @@
+puts "Cleaning database..."
+Product.destroy_all
+
 puts "Creating 5 products..."
 5.times do |i|
   product = Product.create!(
